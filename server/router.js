@@ -10,9 +10,12 @@ const db = mysql.createPool({
 
 async function routes(fastify, _options) {
   fastify.get("/api/", (_request, reply) => {
-    db.query(`SELECT id, name FROM recipes;`, (error, result) => {
-      reply.send(error || result);
-    });
+    db.query(
+      `SELECT id, name, img, shortDesc FROM recipes;`,
+      (error, result) => {
+        reply.send(error || result);
+      }
+    );
   });
 }
 
