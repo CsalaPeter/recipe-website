@@ -1,0 +1,13 @@
+<div class="recipe-cards">
+  <article class="card" *ngFor="let recipe of homeServise.recipes()">
+    <header>
+      <h2>{{ recipe.name }}</h2>
+    </header>
+    <img [src]="recipe.img" />
+    <footer>
+      <button [routerLink]="['/recipe/', recipe.id]" class="details">
+        Details
+      </button>
+    </footer>
+  </article>
+</div>
