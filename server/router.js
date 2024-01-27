@@ -11,7 +11,17 @@ const db = mysql.createPool({
 async function routes(fastify, _options) {
   fastify.get("/api/", (_request, reply) => {
     db.query(
-      `SELECT id, name, img, shortDesc FROM recipes;`,
+      `SELECT id, name, img, prep, cook, diff, shortDesc, kcal FROM recipes;`,
+      (error, result) => {
+        reply.send(error || result);
+      }
+    );
+  });
+
+  fastify.get("/api/recipe/:id", (request, reply) => {
+    let id = request.params.id;
+    db.query(
+      `SELECT id, name, img FROM recipes WHERE id = ${id}`,
       (error, result) => {
         reply.send(error || result);
       }

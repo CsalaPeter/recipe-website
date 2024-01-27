@@ -1,22 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class HomeService {
-  public recipes = toSignal<IRecipe[]>(this.http.get<IRecipe[]>('/api/'));
+export class RecipeServise {
   constructor(private http: HttpClient) {}
+
+  get(id: any): Observable<IRecipe> {
+    return this.http.get<IRecipe>('/api/recipe/' + id);
+  }
 }
 
 export interface IRecipe {
   id: number;
   name: string;
   img: string;
-  prep: number;
-  cook: number;
-  diff: string;
-  shortDesc: string;
-  kcal: number;
 }

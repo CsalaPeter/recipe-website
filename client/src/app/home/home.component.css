@@ -1,34 +1,98 @@
 .recipe-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-gap: 20px;
   padding-inline: 2rem;
+  margin-top: 2rem;
 }
 
 .card {
   background-color: burlywood;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
 }
 
 .card img {
-  object-fit: cover;
   width: 100%;
-  height: 240px;
+  max-height: 230px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 10px 10px 0 0;
 }
 
-.card header h2 {
+.card header h3 {
   text-align: center;
+  margin-block: 10px;
+}
+
+.line {
+  border-bottom: 1px solid white;
+  width: 80%;
+}
+
+.card-body {
+  flex: 1;
+  padding: 0 1em 1em;
+}
+
+.recipe-details {
+  display: flex;
+  list-style: none;
+  padding: 1.2em 0.8em;
+  margin: 0;
+  justify-content: space-between;
+}
+
+.recipe-details li {
+  flex: 1;
+}
+
+.recipe-details li img {
+  width: 30px;
+  height: 30px;
+}
+
+.value {
+  color: red;
+  margin-left: 0.3em;
+  vertical-align: bottom;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.title {
+  display: block;
+  margin-top: -4px;
+  font-size: 20px;
+  width: 300;
+}
+
+.desc {
+  margin: 0.3em 0 1.8em;
 }
 
 footer {
   padding-block: 10px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .details {
   padding: 5px;
-  width: 100px;
-  background-color: cadetblue;
+  width: 200px;
+  background-color: red;
+  color: aliceblue;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  transition: transform 250ms ease;
+  margin-bottom: 10px;
   border-radius: 10px;
-  border-color: blue;
+}
+
+.details:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
 }
