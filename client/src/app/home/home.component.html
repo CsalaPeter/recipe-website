@@ -1,5 +1,5 @@
 <div class="recipe-cards">
-  <article class="card" *ngFor="let recipe of homeServise.recipes()">
+  <article class="card" *ngFor="let recipe of this.recipes">
     <img [src]="recipe.img" />
     <header>
       <h3>{{ recipe.name }}</h3>

@@ -27,6 +27,16 @@ async function routes(fastify, _options) {
       }
     );
   });
+
+  fastify.get("/api/search/:text", (request, reply) => {
+    let text = request.params.text;
+    db.query(
+      `SELECT id, name, img, prep, cook, diff, shortDesc, kcal FROM recipes WHERE name LIKE '%${text}%'`,
+      (error, result) => {
+        reply.send(error || result);
+      }
+    );
+  });
 }
 
 module.exports = routes;

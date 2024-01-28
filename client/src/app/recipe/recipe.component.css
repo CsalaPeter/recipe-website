@@ -1,0 +1,13 @@
+.wrapper {
+  width: 70vw;
+  margin-inline: 15vw;
+  margin-top: 2rem;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+img {
+  width: 300px;
+}

@@ -1,3 +1,19 @@
 <div class="navbar">
   <div class="nav-title">Good Food</div>
+  <div class="search-container">
+    <form class="searchbar">
+      <input
+        class="search"
+        placeholder="What recipe are you looking for?"
+        #search
+      />
+      <button
+        type="button"
+        class="search-button"
+        (click)="searchText(search.value)"
+      >
+        <img src="/assets/svg/search-svgrepo-com.svg" />
+      </button>
+    </form>
+  </div>
 </div>
