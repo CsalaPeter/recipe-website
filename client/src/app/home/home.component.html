@@ -1,34 +1,6 @@
-<div class="recipe-cards">
-  <article class="card" *ngFor="let recipe of this.recipes">
-    <img [src]="recipe.img" />
-    <header>
-      <h3>{{ recipe.name }}</h3>
-      <hr class="line" />
-    </header>
-    <div class="card-body">
-      <ul class="recipe-details">
-        <li class="prep">
-          <img src="/assets/svg/clock-lines-svgrepo-com.svg" />
-          <span class="value">{{ recipe.prep }}</span>
-          <span class="title">Minutes</span>
-        </li>
-        <li class="cook">
-          <img src="/assets/svg/cooking-lid-image-svgrepo-com.svg" />
-          <span class="value"> {{ recipe.cook }}</span>
-          <span class="title">Minutes</span>
-        </li>
-        <li class="kcal">
-          <img src="/assets/svg/scale-balanced-svgrepo-com.svg" />
-          <span class="value"> {{ recipe.kcal }}</span>
-          <span class="title">Calories</span>
-        </li>
-      </ul>
-      <div class="desc">{{ recipe.shortDesc }}</div>
-    </div>
-    <footer>
-      <button [routerLink]="['/recipe/', recipe.id]" class="details">
-        View Recipe
-      </button>
-    </footer>
-  </article>
+<div>
+  <app-recipe-card
+    class="recipe-cards"
+    [recipes]="this.recipes"
+  ></app-recipe-card>
 </div>

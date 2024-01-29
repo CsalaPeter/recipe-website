@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })

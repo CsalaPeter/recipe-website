@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppService, IRecipe } from '../app.service';
 import { Injectable } from '@angular/core';
+import { RecipeCardComponent } from '../components/recipe-card/recipe-card.component';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, RouterModule],
+  imports: [CommonModule, RouterModule, RecipeCardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -28,5 +28,6 @@ export class HomeComponent implements OnInit {
     this.appService
       .search(text)
       .subscribe((data) => (this.searchedRecipes = data));
+    console.log(this.searchedRecipes);
   }
 }
