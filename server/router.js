@@ -20,12 +20,9 @@ async function routes(fastify, _options) {
 
   fastify.get("/api/recipe/:id", (request, reply) => {
     let id = request.params.id;
-    db.query(
-      `SELECT id, name, img FROM recipes WHERE id = ${id}`,
-      (error, result) => {
-        reply.send(error || result);
-      }
-    );
+    db.query(`SELECT * FROM recipes WHERE id = ${id}`, (error, result) => {
+      reply.send(error || result);
+    });
   });
 
   fastify.get("/api/search/:text", (request, reply) => {

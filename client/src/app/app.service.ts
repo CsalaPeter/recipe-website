@@ -30,6 +30,13 @@ export interface IRecipe {
   prep: number;
   cook: number;
   diff: string;
+  serv: string;
   shortDesc: string;
   kcal: number;
+  fat: number;
+  carbs: number;
+  fiber: number;
+  protein: number;
+  ingredients: string;
+  steps: string;
 }
