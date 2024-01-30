@@ -3,7 +3,8 @@
   <div class="search-container">
     <form class="searchbar">
       <input
-        type="search"
+        (keydown.enter)="searchRoute(search.value)"
+        type="text"
         class="search"
         placeholder="What recipe are you looking for?"
         #search
@@ -11,7 +12,7 @@
       <button
         type="button"
         class="search-button"
-        (click)="searchText(search.value)"
+        (click)="searchRoute(search.value)"
       >
         <img src="/assets/svg/search-svgrepo-com.svg" />
       </button>

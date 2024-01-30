@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HomeComponent } from '../home/home.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,9 +9,10 @@ import { HomeComponent } from '../home/home.component';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  constructor(private homeComponent: HomeComponent) {}
+  constructor(private router: Router) {}
 
-  searchText(term: string) {
-    this.homeComponent.searchParam(term);
+  searchRoute(text: string) {
+    this.router.navigate(['/search/', text]);
+    console.log(text);
   }
 }
