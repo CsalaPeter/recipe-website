@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AppService, IRecipe } from '../app.service';
+import { AppService, IRecipe } from '../../app.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

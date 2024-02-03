@@ -1,13 +1,17 @@
 <div class="navbar">
   <div class="nav-title">Good Food</div>
   <div class="search-container">
-    <form class="searchbar">
+    <div class="searchbar">
       <input
         (keydown.enter)="searchRoute(search.value)"
         type="text"
         class="search"
-        placeholder="What recipe are you looking for?"
+        [(ngModel)]="searchParam"
+        name="searchParam"
+        (ngModelChange)="handleSearch($event)"
         #search
+        (blur)="onBlur()"
+        placeholder="What recipe are you looking for?"
       />
       <button
         type="button"
@@ -16,6 +20,13 @@
       >
         <img src="/assets/svg/search-svgrepo-com.svg" />
       </button>
-    </form>
+    </div>
+    <ul class="autosuggest-results">
+      @for(recipe of searchRes; track recipe.id){
+      <a class="autosuggest-item">
+        <li>{{ recipe.name }}</li>
+      </a>
+      }
+    </ul>
   </div>
 </div>
