@@ -29,6 +29,7 @@
     height: 35px;
     display: flex;
     width: 100%;
+    margin-top: 10px;
   }
 
   .search {
@@ -48,5 +49,33 @@
     border-radius: 0 10px 10px 0;
     cursor: pointer;
     padding: 5px;
+  }
+
+  .autosuggest-results {
+    background-color: aquamarine;
+    margin-top: 0px;
+    border: 1px solid brown;
+    width: 265px;
+    margin-left: 5px;
+  }
+
+  .autosuggest-results-hide {
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .autosuggest-item {
+    font-size: large;
+    text-decoration: none;
+    list-style-type: none;
+    color: black;
+  }
+
+  .autosuggest-item li {
+    padding: 10px;
+  }
+
+  .autosuggest-item:hover {
+    cursor: pointer;
   }
 }

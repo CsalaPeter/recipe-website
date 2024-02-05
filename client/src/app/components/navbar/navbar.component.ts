@@ -1,13 +1,14 @@
 import { OnInit, Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AppService, IRecipe } from '../../app.service';
 import { BehaviorSubject, debounceTime, filter, switchMap } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
@@ -35,7 +36,9 @@ export class NavbarComponent {
   }
 
   onBlur() {
-    this.searchRes = [];
-    this.searchParam = '';
+    setTimeout(() => {
+      this.searchRes = [];
+      this.searchParam = '';
+    }, 200);
   }
 }

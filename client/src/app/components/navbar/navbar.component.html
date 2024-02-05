@@ -1,5 +1,5 @@
-<div class="navbar">
-  <div class="nav-title">Good Food</div>
+<nav class="navbar">
+  <header class="nav-title">Good Food</header>
   <div class="search-container">
     <div class="searchbar">
       <input
@@ -21,12 +21,18 @@
         <img src="/assets/svg/search-svgrepo-com.svg" />
       </button>
     </div>
-    <ul class="autosuggest-results">
+    <ul
+      [ngClass]="
+        search.value.length < 2
+          ? 'autosuggest-results-hide'
+          : 'autosuggest-results'
+      "
+    >
       @for(recipe of searchRes; track recipe.id){
-      <a class="autosuggest-item">
+      <a class="autosuggest-item" [routerLink]="['/recipe/', recipe.id]">
         <li>{{ recipe.name }}</li>
       </a>
       }
     </ul>
   </div>
-</div>
+</nav>
