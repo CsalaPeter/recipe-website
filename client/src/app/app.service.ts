@@ -21,10 +21,31 @@ export class AppService {
   get(id: any): Observable<IRecipe[]> {
     return this.http.get<IRecipe[]>('/api/recipe/' + id);
   }
+
+  newRecipe(recipe: INewRecipe): Observable<{}> {
+    return this.http.post('/api/newRecipe', recipe);
+  }
 }
 
 export interface IRecipe {
   id: number;
+  name: string;
+  img: string;
+  prep: number;
+  cook: number;
+  diff: string;
+  serv: string;
+  shortDesc: string;
+  kcal: number;
+  fat: number;
+  carbs: number;
+  fiber: number;
+  protein: number;
+  ingredients: string;
+  steps: string;
+}
+
+export interface INewRecipe {
   name: string;
   img: string;
   prep: number;

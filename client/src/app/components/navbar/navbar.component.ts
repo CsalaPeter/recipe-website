@@ -19,8 +19,8 @@ export class NavbarComponent {
   constructor(private router: Router, private appService: AppService) {
     this.seachSubject
       .pipe(
-        debounceTime(500),
         filter((search) => search.length > 2),
+        debounceTime(500),
         switchMap((search) => this.appService.search(search))
       )
       .subscribe((data) => (this.searchRes = data));

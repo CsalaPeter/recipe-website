@@ -23,7 +23,7 @@
     </div>
     <ul
       [ngClass]="
-        search.value.length < 2
+        search.value.length <= 3
           ? 'autosuggest-results-hide'
           : 'autosuggest-results'
       "
@@ -35,4 +35,7 @@
       }
     </ul>
   </div>
+  <ul class="nav-buttons">
+    <li [routerLink]="['/new-recipe']">New Recipe</li>
+  </ul>
 </nav>

@@ -34,6 +34,17 @@ async function routes(fastify, _options) {
       }
     );
   });
+
+  fastify.post("/api/newRecipe", (request, reply) => {
+    let recipe = request.body;
+    db.query(
+      `INSERT INTO  recipes (name, img, prep, cook, diff, serv, shortDesc, kcal, fat, carbs, fiber, protein, ingredients, steps) VALUES
+      ('${recipe.name}', '${recipe.img}', '${recipe.prep}', '${recipe.cook}', '${recipe.diff}', '${recipe.serv}', '${recipe.shortDesc}', '${recipe.kcal}', '${recipe.fat}', '${recipe.carbs}', '${recipe.fiber}', '${recipe.protein}', '${recipe.ingredients}', '${recipe.steps}')`,
+      (error, result) => {
+        reply.send(error || result);
+      }
+    );
+  });
 }
 
 module.exports = routes;
