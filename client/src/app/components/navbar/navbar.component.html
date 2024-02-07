@@ -1,5 +1,5 @@
 <nav class="navbar">
-  <header class="nav-title">Good Food</header>
+  <header [routerLink]="['/']" class="nav-title">Good Food</header>
   <div class="search-container">
     <div class="searchbar">
       <input
@@ -23,15 +23,15 @@
     </div>
     <ul
       [ngClass]="
-        search.value.length <= 3
+        search.value.length < 3
           ? 'autosuggest-results-hide'
           : 'autosuggest-results'
       "
     >
       @for(recipe of searchRes; track recipe.id){
-      <a class="autosuggest-item" [routerLink]="['/recipe/', recipe.id]">
-        <li>{{ recipe.name }}</li>
-      </a>
+      <li class="autosuggest-item" [routerLink]="['/recipe/', recipe.id]">
+        {{ recipe.name }}
+      </li>
       }
     </ul>
   </div>

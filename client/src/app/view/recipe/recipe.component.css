@@ -16,6 +16,7 @@
 }
 img {
   width: 90%;
+  border-radius: 10px;
 }
 
 .icon {
@@ -27,7 +28,7 @@ img {
   display: flex;
   list-style: none;
   padding: 0;
-  margin: 0 0 20px 0;
+  margin: 0 0 0 1px;
   justify-content: space-between;
 }
 
@@ -59,18 +60,22 @@ img {
 }
 
 .info li {
-  background-color: red;
+  background-color: hsl(148, 100%, 15%);
   height: 50px;
   width: 50px;
   padding: 5px;
   text-align: center;
-  color: aliceblue;
-  font-size: 0.9rem;
+  color: hsl(75, 100%, 60%);
+  font-size: 0.92rem;
 }
 
 .middle {
   display: grid;
   grid-template-columns: 50% 50%;
+}
+
+.middle ul {
+  margin: 0;
 }
 
 h3 {
@@ -79,4 +84,5 @@ h3 {
 
 .ingredient {
   margin-block: 5px;
+  width: 80%;
 }

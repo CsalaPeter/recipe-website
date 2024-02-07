@@ -1,8 +1,10 @@
 .card {
-  background-color: burlywood;
+  background-color: hsl(180, 27%, 89%);
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+  border: 4px solid hsl(101, 100%, 35%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card img {
@@ -74,8 +76,8 @@ footer {
 .details {
   padding: 5px;
   width: 200px;
-  background-color: red;
-  color: aliceblue;
+  background-color: hsl(148, 100%, 15%);
+  color: hsl(75, 100%, 60%);
   border: none;
   font-size: 16px;
   font-weight: 400;
@@ -87,4 +89,6 @@ footer {
 .details:hover {
   cursor: pointer;
   transform: translateY(-3px);
+  background-color: hsl(120, 100%, 25%);
+  color: hsl(148, 100%, 5%);
 }

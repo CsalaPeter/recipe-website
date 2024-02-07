@@ -20,7 +20,7 @@ export class NavbarComponent {
     this.seachSubject
       .pipe(
         filter((search) => search.length > 2),
-        debounceTime(500),
+        debounceTime(300),
         switchMap((search) => this.appService.search(search))
       )
       .subscribe((data) => (this.searchRes = data));

@@ -1,7 +1,7 @@
 .new-recipe {
   margin: 40px auto;
-  width: 1000px;
-  border: 2px solid brown;
+  width: 600px;
+  border: 4px solid hsl(101, 100%, 35%);
   border-radius: 10px;
 }
 
@@ -17,4 +17,68 @@ div {
   display: grid;
   justify-content: center;
   margin-block: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  border: none;
+  font-size: 1rem;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 400px;
+  background-color: hsl(189, 18%, 92%);
+  margin-bottom: 30px;
+}
+
+.dia {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+}
+
+.time {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.dia label,
+.time label {
+  text-align: center;
+}
+
+.dia input {
+  width: 30px;
+  margin-inline: 10px;
+}
+
+.time input {
+  width: 30px;
+  margin-inline: 30px;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+button {
+  padding: 20px 60px 20px 60px;
+  color: hsl(75, 100%, 60%);
+  background-color: hsl(148, 100%, 15%);
+  font-size: 18px;
+  text-align: center;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+  border: none;
+  transition: transform 250ms ease;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
+  background-color: hsl(120, 100%, 25%);
+  color: hsl(148, 100%, 5%);
 }

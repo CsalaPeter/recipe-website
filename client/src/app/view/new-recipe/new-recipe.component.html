@@ -6,30 +6,33 @@
       <input type="text" name="recipe-name" formControlName="recipeName" />
     </div>
     <div>
-      <label for="recipe-img">Picture</label>
+      <label for="recipe-img">Picture(URL)</label>
       <input type="text" name="recipe-img" formControlName="recipeImg" />
     </div>
-    <div>
+    <div class="time">
       <label for="recipe-prep">Prep Time</label>
-      <input type="number" name="recipe-prep" formControlName="recipePrep" />
       <label for="recipe-cook">Cooking Time</label>
-      <input type="number" name="recipe-cook" formControlName="recipeCook" />
-      <label for="recipe-diff">Difficulty</label>
-      <input type="text" name="recipe-diff" formControlName="recipeDiff" />
       <label for="recipe-serv">Serving Size</label>
+      <input type="number" name="recipe-prep" formControlName="recipePrep" />
+      <input type="number" name="recipe-cook" formControlName="recipeCook" />
       <input type="number" name="recipe-serv" formControlName="recipeServ" />
     </div>
 
     <div>
+      <label for="recipe-diff">Difficulty</label>
+      <input type="text" name="recipe-diff" formControlName="recipeDiff" />
+    </div>
+
+    <div class="dia">
       <label for="recipe-kcal">Kcal</label>
-      <input type="number" name="recipe-kcal" formControlName="recipeKcal" />
       <label for="recipe-fat">Fat</label>
-      <input type="number" name="recipe-fat" formControlName="recipeFat" />
       <label for="recipe-carbs">Carbs</label>
-      <input type="number" name="recipe-carbs" formControlName="recipeCarbs" />
       <label for="recipe-fiber">Fiber</label>
-      <input type="number" name="recipe-fiber" formControlName="recipeFiber" />
       <label for="recipe-protein">Protein</label>
+      <input type="number" name="recipe-kcal" formControlName="recipeKcal" />
+      <input type="number" name="recipe-fat" formControlName="recipeFat" />
+      <input type="number" name="recipe-carbs" formControlName="recipeCarbs" />
+      <input type="number" name="recipe-fiber" formControlName="recipeFiber" />
       <input
         type="number"
         name="recipe-protein"
@@ -39,16 +42,26 @@
 
     <div>
       <label for="recipe-desc">Short Description</label>
-      <input type="text" name="recipe-desc" formControlName="recipeDesc" />
+      <textarea
+        type="text"
+        name="recipe-desc"
+        formControlName="recipeDesc"
+      ></textarea>
     </div>
 
     <div>
       <label for="recipe-ing">Ingredients</label>
-      <input type="text" name="recipe-ing" formControlName="recipeIng" />
+      <textarea type="text" name="recipe-ing" formControlName="recipeIng">
+      </textarea>
     </div>
     <div>
       <label for="recipe-steps">Steps</label>
-      <input type="text" name="recipe-steps" formControlName="recipeSteps" />
+      <textarea
+        rows="2"
+        type="text"
+        name="recipe-steps"
+        formControlName="recipeSteps"
+      ></textarea>
     </div>
   </section>
   <div>
