@@ -30,7 +30,7 @@ textarea {
   padding: 15px;
   width: 400px;
   background-color: hsl(189, 18%, 92%);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .dia {
@@ -81,4 +81,19 @@ button:hover {
   transform: translateY(-3px);
   background-color: hsl(120, 100%, 25%);
   color: hsl(148, 100%, 5%);
+}
+
+button:disabled {
+  background-color: gray;
+  color: black;
+  transform: translateY(0);
+  cursor: not-allowed;
+}
+
+.warning {
+  margin: 0;
+}
+
+.text-danger {
+  color: red;
 }

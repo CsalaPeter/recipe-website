@@ -4,6 +4,19 @@
     <div>
       <label for="recipe-name">Name</label>
       <input type="text" name="recipe-name" formControlName="recipeName" />
+      @if(recipeForm.get('recipeName')!.invalid &&
+      recipeForm.get('recipeName')?.dirty ||
+      recipeForm.get('recipeName')?.touched ){
+      <div class="warning">
+        @if(recipeForm.get('recipeName')?.errors?.['required']){
+        <small class="text-danger">Recipe name required!</small>
+        } @if (recipeForm.get('recipeName')?.errors?.['minlength']) {
+        <small class="text-danger">Minimal length is 3 characters!</small>
+        } @if (recipeForm.get('recipeName')?.errors?.['maxlength']) {
+        <small class="text-danger">Maximum length is 100 characters!</small>
+        }
+      </div>
+      }
     </div>
     <div>
       <label for="recipe-img">Picture(URL)</label>
@@ -65,6 +78,6 @@
     </div>
   </section>
   <div>
-    <button type="submit">Submit</button>
+    <button [disabled]="recipeForm.invalid" type="submit">Submit</button>
   </div>
 </form>

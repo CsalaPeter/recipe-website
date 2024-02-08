@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
+import {
+  ReactiveFormsModule,
+  FormControl,
+  FormGroup,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
 import { AppService, INewRecipe } from '../../app.service';
 
 @Component({
@@ -10,23 +16,29 @@ import { AppService, INewRecipe } from '../../app.service';
   styleUrl: './new-recipe.component.css',
 })
 export class NewRecipeComponent {
-  constructor(private appService: AppService) {}
+  constructor(
+    private appService: AppService,
+    private formBuilder: FormBuilder
+  ) {}
 
-  recipeForm = new FormGroup({
-    recipeName: new FormControl(''),
-    recipeImg: new FormControl(''),
-    recipePrep: new FormControl(0),
-    recipeCook: new FormControl(0),
-    recipeDiff: new FormControl(''),
-    recipeServ: new FormControl(0),
-    recipeDesc: new FormControl(''),
-    recipeKcal: new FormControl(0),
-    recipeFat: new FormControl(0),
-    recipeCarbs: new FormControl(0),
-    recipeFiber: new FormControl(0),
-    recipeProtein: new FormControl(0),
-    recipeIng: new FormControl(''),
-    recipeSteps: new FormControl(''),
+  recipeForm = this.formBuilder.nonNullable.group({
+    recipeName: [
+      '',
+      [Validators.required, Validators.minLength(3), Validators.maxLength(100)],
+    ],
+    recipeImg: [''],
+    recipePrep: [0],
+    recipeCook: [0],
+    recipeDiff: [''],
+    recipeServ: [0],
+    recipeDesc: [''],
+    recipeKcal: [0],
+    recipeFat: [0],
+    recipeCarbs: [0],
+    recipeFiber: [0],
+    recipeProtein: [0],
+    recipeIng: [''],
+    recipeSteps: [''],
   });
 
   onSubmit() {
