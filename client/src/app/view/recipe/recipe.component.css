@@ -48,11 +48,14 @@ img {
 }
 
 .desc {
+  margin-top: 20px;
   font-size: 1.2rem;
 }
 
 .info {
+  width: 90%;
   display: flex;
+  justify-content: center;
   list-style: none;
   padding: 0;
   margin: 0 0 20px 0;
@@ -85,4 +88,9 @@ h3 {
 .ingredient {
   margin-block: 5px;
   width: 80%;
+  font-size: 1.2rem;
+}
+
+.steps {
+  font-size: 1.2rem;
 }
