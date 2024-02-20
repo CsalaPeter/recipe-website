@@ -1,74 +1,85 @@
-<article class="wrapper">
+<div class="wrapper">
+  <div class="banner"></div>
   <section class="top">
     <div>
-      <img [src]="recipe.img" />
-      <div>
-        <ul class="info">
-          <li>
-            <span>Kcal</span> <br />
-            <span>{{ recipe.kcal }} </span>
-          </li>
-          <li>
-            <span>Fat</span> <br />
-            <span>{{ recipe.fat }} g</span>
-          </li>
-          <li>
-            <span>Carbs</span> <br />
-            <span>{{ recipe.carbs }} g</span>
-          </li>
-          <li>
-            <span>Protein</span> <br />
-            <span>{{ recipe.protein }} g</span>
-          </li>
-          <li>
-            <span>Fiber</span> <br />
-            <span>{{ recipe.fiber }} g</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div>
       <h1 class="recipe-name">{{ recipe.name }}</h1>
-      <ul class="details">
-        <li>
-          <img class="icon" src="/assets/svg/clock-lines-svgrepo-com.svg" />
-          <span class="lable">Prep</span><br />
-          <span class="value">{{ recipe.prep }} Minutes</span>
-        </li>
-        <li>
-          <img
-            class="icon"
-            src="/assets/svg/cooking-lid-image-svgrepo-com.svg"
-          />
-          <span class="lable">Cook</span><br />
-          <span class="value">{{ recipe.cook }} Minutes</span>
-        </li>
-        <li>
-          <img class="icon" src="/assets/svg/level-slider-svgrepo-com.svg" />
-          <span class="lable">Difficulty</span> <br />
-          <span class="value">{{ recipe.diff }}</span>
-        </li>
-        <li>
-          <img class="icon" src="/assets/svg/people-svgrepo-com.svg" />
-          <span class="lable">Serving</span><br />
-          <span class="value">{{ recipe.serv }} people</span>
-        </li>
-      </ul>
-      <div class="desc">{{ recipe.shortDesc }}</div>
+      <div class="card">
+        <img [src]="recipe.img" />
+        <div class="card-right">
+          <ul class="details">
+            <li>
+              <img class="icon" src="/assets/svg/clock-lines-svgrepo-com.svg" />
+              <span class="lable">Prep</span><br />
+              <span class="value">{{ recipe.prep }} Minutes</span>
+            </li>
+            <li>
+              <img
+                class="icon"
+                src="/assets/svg/cooking-lid-image-svgrepo-com.svg"
+              />
+              <span class="lable">Cook</span><br />
+              <span class="value">{{ recipe.cook }} Minutes</span>
+            </li>
+            <li>
+              <img
+                class="icon"
+                src="/assets/svg/level-slider-svgrepo-com.svg"
+              />
+              <span class="lable">Difficulty</span> <br />
+              <span class="value">{{ recipe.diff }}</span>
+            </li>
+            <li>
+              <img class="icon" src="/assets/svg/people-svgrepo-com.svg" />
+              <span class="lable">Serving</span><br />
+              <span class="value">{{ recipe.serv }} people</span>
+            </li>
+          </ul>
+          <p class="desc">{{ recipe.shortDesc }}</p>
+        </div>
+      </div>
     </div>
   </section>
   <section class="middle">
-    <ul>
-      <h3>Ingredients</h3>
-      <li class="ingredient" *ngFor="let ingredient of ingredients">
-        {{ ingredient }}
-      </li>
-    </ul>
-    <div>
-      <h3>Steps</h3>
-      <p *ngFor="let step of steps" class="steps">
-        {{ step }}
-      </p>
-    </div>
+    <fieldset>
+      <legend>Ingredients</legend>
+      <ul class="ingredients">
+        <li class="ingredient" *ngFor="let ingredient of ingredients">
+          {{ ingredient }}
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>Steps</legend>
+      <div class="steps">
+        <p *ngFor="let step of steps">
+          {{ step }}
+        </p>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Info</legend>
+      <ul class="info">
+        <li>
+          <span>Kcal</span> <br />
+          <span>{{ recipe.kcal }} </span>
+        </li>
+        <li>
+          <span>Fat</span> <br />
+          <span>{{ recipe.fat }} g</span>
+        </li>
+        <li>
+          <span>Carbs</span> <br />
+          <span>{{ recipe.carbs }} g</span>
+        </li>
+        <li>
+          <span>Protein</span> <br />
+          <span>{{ recipe.protein }} g</span>
+        </li>
+        <li>
+          <span>Fiber</span> <br />
+          <span>{{ recipe.fiber }} g</span>
+        </li>
+      </ul>
+    </fieldset>
   </section>
-</article>
+</div>

@@ -1,45 +1,65 @@
 .wrapper {
-  width: 60vw;
-  margin-inline: 20vw;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
+
+.top,
+.middle {
+  max-width: 1300px;
+  margin-inline: auto;
+}
+
+.banner {
+  width: 100%;
+  height: 340px;
+  background-color: hsl(148, 100%, 15%);
+  position: absolute;
+  z-index: -1;
+}
+
 .recipe-name {
   font-size: 2.2rem;
   text-align: center;
-  margin-top: 0;
+  padding-top: 6rem;
+  color: white;
 }
 
-.top {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  margin-bottom: 20px;
+.card {
+  display: flex;
+  min-height: 450px;
+  background-color: hsl(0, 0%, 90%);
+  border-radius: 15px;
 }
-img {
-  width: 90%;
-  border-radius: 10px;
+
+.card-right {
+  padding: 25px;
+}
+
+.desc {
+  margin-top: 2rem;
+  font-size: 1.2rem;
 }
 
 .icon {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
 .details {
   display: flex;
   list-style: none;
   padding: 0;
-  margin: 0 0 0 1px;
-  justify-content: space-between;
+  margin-top: 20px;
 }
 
 .details li {
   flex: 1;
+  text-align: center;
 }
 
 .lable {
   color: red;
   margin-left: 0.3em;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 600;
 }
 
@@ -47,14 +67,42 @@ img {
   font-size: 1.2rem;
 }
 
-.desc {
-  margin-top: 20px;
+img {
+  width: 600px;
+  height: 450px;
+  border-radius: 15px 0 0 15px;
+}
+
+.middle {
+  display: flex;
+  margin-top: 50px;
+}
+
+fieldset {
+  border: 1px solid green;
+  border-radius: 15px;
+  flex: 0 1 500px;
+  margin-inline: 10px;
+  height: min-content;
+}
+
+legend {
   font-size: 1.2rem;
+  padding: 10px;
+}
+
+.ingredient {
+  margin-block: 5px;
+  font-size: 1.2rem;
+  padding-inline: 5px;
+}
+
+.steps p {
+  font-size: 1.2rem;
+  padding-inline: 30px;
 }
 
 .info {
-  width: 90%;
-  display: flex;
   justify-content: center;
   list-style: none;
   padding: 0;
@@ -63,34 +111,7 @@ img {
 }
 
 .info li {
-  background-color: hsl(148, 100%, 15%);
-  height: 50px;
-  width: 50px;
   padding: 5px;
   text-align: center;
-  color: hsl(75, 100%, 60%);
-  font-size: 0.92rem;
-}
-
-.middle {
-  display: grid;
-  grid-template-columns: 50% 50%;
-}
-
-.middle ul {
-  margin: 0;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-.ingredient {
-  margin-block: 5px;
-  width: 80%;
-  font-size: 1.2rem;
-}
-
-.steps {
   font-size: 1.2rem;
 }
