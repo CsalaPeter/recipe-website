@@ -40,6 +40,7 @@
 
 .recipe-details li {
   flex: 1;
+  text-align: center;
 }
 
 .recipe-details li img {
@@ -63,7 +64,7 @@
 }
 
 .desc {
-  margin: 0.3em 0 1.8em;
+  padding: 1.2em 0.8em;
   font-size: 1.2rem;
 }
 

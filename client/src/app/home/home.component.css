@@ -5,3 +5,7 @@
   padding-inline: 2rem;
   margin-top: 2rem;
 }
+
+.card-wrapper {
+  min-height: calc(100vh - 242px);
+}
