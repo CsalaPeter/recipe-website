@@ -29,13 +29,13 @@ export class AppService {
 
 export interface IRecipe {
   id: number;
-  name: string;
+  recipe_name: string;
   img: string;
   prep: number;
   cook: number;
   diff: string;
   serv: string;
-  shortDesc: string;
+  short_desc: string;
   kcal: number;
   fat: number;
   carbs: number;
@@ -46,13 +46,13 @@ export interface IRecipe {
 }
 
 export interface INewRecipe {
-  name: string;
+  recipe_name: string;
   img: string;
   prep: number;
   cook: number;
   diff: string;
   serv: string;
-  shortDesc: string;
+  short_desc: string;
   kcal: number;
   fat: number;
   carbs: number;

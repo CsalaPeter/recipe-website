@@ -30,7 +30,7 @@
     >
       @for(recipe of searchRes; track recipe.id){
       <li class="autosuggest-item" [routerLink]="['/recipe/', recipe.id]">
-        {{ recipe.name }}
+        {{ recipe.recipe_name }}
       </li>
       }
     </ul>

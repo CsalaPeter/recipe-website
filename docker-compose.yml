@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  database:
+    container_name: recipe-database
+    image: postgres:16
+    environment:
+      - POSTGRES_DB=recipesDB
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"

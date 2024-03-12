@@ -43,13 +43,13 @@ export class NewRecipeComponent {
 
   onSubmit() {
     const newRecipe: INewRecipe = {
-      name: this.recipeForm.get(['recipeName'])!.value,
+      recipe_name: this.recipeForm.get(['recipeName'])!.value,
       img: this.recipeForm.get(['recipeImg'])!.value,
       prep: this.recipeForm.get(['recipePrep'])!.value,
       cook: this.recipeForm.get(['recipeCook'])!.value,
       diff: this.recipeForm.get(['recipeDiff'])!.value,
       serv: this.recipeForm.get(['recipeServ'])!.value,
-      shortDesc: this.recipeForm.get(['recipeDesc'])!.value,
+      short_desc: this.recipeForm.get(['recipeDesc'])!.value,
       kcal: this.recipeForm.get(['recipeKcal'])!.value,
       fat: this.recipeForm.get(['recipeFat'])!.value,
       carbs: this.recipeForm.get(['recipeCarbs'])!.value,
