@@ -1,0 +1,30 @@
+.login {
+  width: 500px;
+  height: 250px;
+  margin: auto;
+  border: 2px solid hsl(148, 100%, 15%);
+  border-radius: 20px;
+  margin-block: 20px;
+
+  .login-header {
+    text-align: center;
+    background-color: hsl(148, 100%, 15%);
+    border-radius: 15px 15px 0 0;
+    color: hsl(75, 100%, 60%);
+  }
+
+  .login-header h1 {
+    margin: 0;
+    padding-block: 5px;
+  }
+
+  .login-cred {
+    display: grid;
+    justify-content: center;
+    margin-block: 20px;
+  }
+
+  .login-submit {
+    margin-top: 10px;
+  }
+}
