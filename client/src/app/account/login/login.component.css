@@ -1,21 +1,15 @@
 .login {
   width: 500px;
-  height: 250px;
   margin: auto;
-  border: 2px solid hsl(148, 100%, 15%);
-  border-radius: 20px;
   margin-block: 20px;
 
   .login-header {
     text-align: center;
-    background-color: hsl(148, 100%, 15%);
-    border-radius: 15px 15px 0 0;
-    color: hsl(75, 100%, 60%);
+    color: hsl(148, 100%, 15%);
   }
 
   .login-header h1 {
     margin: 0;
-    padding-block: 5px;
   }
 
   .login-cred {
@@ -26,5 +20,23 @@
 
   .login-submit {
     margin-top: 10px;
+    width: 100px;
+    justify-self: center;
+    padding: 10px 10px;
+    color: hsl(75, 100%, 60%);
+    background-color: hsl(148, 100%, 15%);
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .login-submit:hover {
+    cursor: pointer;
+    background-color: hsl(120, 100%, 25%);
+    color: hsl(148, 100%, 5%);
+  }
+
+  form input {
+    width: 250px;
   }
 }

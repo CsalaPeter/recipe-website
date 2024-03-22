@@ -36,7 +36,7 @@
     </ul>
   </div>
   <ul class="nav-right">
-    <li class="login-btn" [routerLink]="['/login']">Login</li>
+    <li class="login-btn" (click)="login.showModal()">Login</li>
     <li class="profile">
       <div class="profile-circle">
         <img src="/assets/svg/profile-round-1342-svgrepo-com.svg" alt="" />
@@ -44,3 +44,8 @@
     </li>
   </ul>
 </nav>
+
+<dialog #login class="login-dialog">
+  <button (click)="login.close()" class="close-btn">X</button>
+  <app-login></app-login>
+</dialog>

@@ -4,19 +4,22 @@ import { FormsModule } from '@angular/forms';
 import { AppService, IRecipe } from '../../app.service';
 import { BehaviorSubject, debounceTime, filter, switchMap } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from '../../account/login/login.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterLink],
+  imports: [FormsModule, CommonModule, RouterLink, LoginComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   searchRes: IRecipe[] = [];
   seachSubject = new BehaviorSubject<string>('');
   searchParam = '';
-  constructor(private router: Router, private appService: AppService) {
+  constructor(private router: Router, private appService: AppService) {}
+
+  ngOnInit(): void {
     this.seachSubject
       .pipe(
         filter((search) => search.length > 2),
