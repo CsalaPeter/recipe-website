@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  ReactiveFormsModule,
-  FormControl,
-  FormGroup,
-  Validators,
-  FormBuilder,
-} from '@angular/forms';
+import { ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
 import { AppService, INewRecipe } from '../../app.service';
 
 @Component({

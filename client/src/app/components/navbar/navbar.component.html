@@ -48,4 +48,16 @@
 <dialog #login class="login-dialog">
   <button (click)="login.close()" class="close-btn">X</button>
   <app-login></app-login>
+  <footer>
+    <span
+      >Don't have an account yet?
+      <strong (click)="register.showModal(); login.close()"
+        >Register</strong
+      ></span
+    >
+  </footer>
+</dialog>
+
+<dialog #register>
+  <h1>Register</h1>
 </dialog>

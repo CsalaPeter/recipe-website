@@ -3,11 +3,40 @@
     <h1>Login</h1>
   </header>
   <main class="login-body">
-    <form class="login-cred">
+    <form class="login-form" [formGroup]="loginForm">
       <label for="email">Email</label>
-      <input name="email" type="text" />
+      <input
+        name="login-email"
+        type="text"
+        formControlName="loginEmail"
+        placeholder="example@gmail.com"
+      />
+      @if(loginForm.get('loginEmail')!.invalid &&
+      loginForm.get('loginEmail')?.dirty ||
+      loginForm.get('loginEmail')?.touched){
+      <div class="warning">
+        @if(loginForm.get('loginEmail')?.errors?.['required']){
+        <small class="text-warning">Email required!</small>
+        } @if(loginForm.get('loginEmail')?.errors?.['email']) {
+        <small class="text-warning">Wrong email pattern!</small>
+        }
+      </div>
+      }
       <label for="password">Password</label>
-      <input name="password" type="text" />
+      <input
+        name="password"
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+      />
+      @if(loginForm.get('password')!.invalid && loginForm.get('password')?.dirty
+      || loginForm.get('password')?.touched){
+      <div class="warning">
+        @if(loginForm.get('password')?.errors?.['required']){
+        <small class="text-warning">Password required!</small>
+        }
+      </div>
+      }
       <button class="login-submit">Login</button>
     </form>
   </main>

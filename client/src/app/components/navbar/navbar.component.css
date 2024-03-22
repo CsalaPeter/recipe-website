@@ -149,6 +149,19 @@
     cursor: pointer;
     font-size: larger;
   }
+
+  footer {
+    text-align: center;
+  }
+
+  strong {
+    color: hsl(148, 100%, 15%);
+  }
+
+  strong:hover {
+    cursor: pointer;
+    color: hsl(120, 100%, 25%);
+  }
 }
 
 .login-dialog::backdrop {
