@@ -1,1 +1,36 @@
-<p>register works!</p>
+<section class="register">
+  <header class="register-header"><h1>Register</h1></header>
+  <main class="register-body">
+    <form class="register-form" [formGroup]="registerForm">
+      <label for="register-name">User Name</label>
+      <input
+        name="register-name"
+        type="text"
+        formControlName="userName"
+        placeholder="User Name"
+      />
+      <label for="register-email">Email</label>
+      <input
+        name="register-email"
+        type="text"
+        formControlName="registerEmail"
+        placeholder="example@gmail.com"
+      />
+      <label for="register-password">Password</label>
+      <input
+        name="register-password"
+        type="password"
+        formControlName="registerPassword"
+        placeholder="Your Password"
+      />
+      <label for="password-again">Repeat Password</label>
+      <input
+        name="password-again"
+        type="password"
+        formControlName="passwordAgain"
+        placeholder="Password Again"
+      />
+      <button class="register-submit">Register</button>
+    </form>
+  </main>
+</section>

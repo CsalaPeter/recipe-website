@@ -5,11 +5,18 @@ import { AppService, IRecipe } from '../../app.service';
 import { BehaviorSubject, debounceTime, filter, switchMap } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from '../../account/login/login.component';
+import { RegisterComponent } from '../../account/register/register.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterLink, LoginComponent],
+  imports: [
+    FormsModule,
+    CommonModule,
+    RouterLink,
+    LoginComponent,
+    RegisterComponent,
+  ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })

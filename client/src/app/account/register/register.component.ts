@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
+import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrl: './register.component.css',
 })
 export class RegisterComponent {
+  constructor(private formBuilder: FormBuilder) {}
 
+  registerForm = this.formBuilder.group({});
 }

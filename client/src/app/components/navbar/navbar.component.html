@@ -37,11 +37,12 @@
   </div>
   <ul class="nav-right">
     <li class="login-btn" (click)="login.showModal()">Login</li>
-    <li class="profile">
+    <li class="register-btn" (click)="register.showModal()">Register</li>
+    <!--<li class="profile">
       <div class="profile-circle">
         <img src="/assets/svg/profile-round-1342-svgrepo-com.svg" alt="" />
       </div>
-    </li>
+    </li>-->
   </ul>
 </nav>
 
@@ -58,6 +59,13 @@
   </footer>
 </dialog>
 
-<dialog #register>
-  <h1>Register</h1>
+<dialog #register class="register-dialog">
+  <button (click)="register.close()" class="close-btn">X</button>
+  <app-register></app-register>
+  <footer>
+    <span
+      >Have an account?
+      <strong (click)="login.showModal(); register.close()">Login</strong></span
+    >
+  </footer>
 </dialog>
