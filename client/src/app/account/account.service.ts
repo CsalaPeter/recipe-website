@@ -11,3 +11,10 @@ export interface ILogin {
   email: string;
   password: string;
 }
+
+export interface IRegister {
+  userName: string;
+  registerEmail: string;
+  registerPassword: string;
+  passwordAgain: string;
+}

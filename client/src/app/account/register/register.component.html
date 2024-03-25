@@ -9,6 +9,20 @@
         formControlName="userName"
         placeholder="User Name"
       />
+      @if(registerForm.get('userName')?.invalid &&
+      registerForm.get('userName')?.dirty ||
+      registerForm.get('userName')?.touched){
+      <div class="warning">
+        @if(registerForm.get('userName')?.errors?.['required']) {
+        <small class="text-warning">Username Requierd!</small>
+        } @if(registerForm.get('userName')?.errors?.['minlength'] ||
+        registerForm.get('userName')?.errors?.['maxlength']) {
+        <small class="text-warning"
+          >Username must be between 3 and 20 characters!</small
+        >
+        }
+      </div>
+      }
       <label for="register-email">Email</label>
       <input
         name="register-email"
@@ -16,6 +30,17 @@
         formControlName="registerEmail"
         placeholder="example@gmail.com"
       />
+      @if(registerForm.get('registerEmail')!.invalid &&
+      registerForm.get('registerEmail')?.dirty ||
+      registerForm.get('registerEmail')?.touched){
+      <div class="warning">
+        @if(registerForm.get('registerEmail')?.errors?.['required']) {
+        <small class="text-warning">Email Requierd!</small>
+        } @if(registerForm.get('registerEmail')?.errors?.['email']) {
+        <small class="text-warning">Wrong email pattern!</small>
+        }
+      </div>
+      }
       <label for="register-password">Password</label>
       <input
         name="register-password"
@@ -23,6 +48,19 @@
         formControlName="registerPassword"
         placeholder="Your Password"
       />
+      @if(registerForm.get('registerPassword')!.invalid &&
+      registerForm.get('registerPassword')?.dirty ||
+      registerForm.get('registerPassword')?.touched){
+      <div class="warning">
+        @if(registerForm.get('registerPassword')?.errors?.['required']) {
+        <small class="text-warning">Password requierd!</small>
+        } @if(registerForm.get('registerPassword')?.errors?.['minlength']) {
+        <small class="text-warning"
+          >Password needs to be longer than 10 characters</small
+        >
+        }
+      </div>
+      }
       <label for="password-again">Repeat Password</label>
       <input
         name="password-again"
@@ -30,6 +68,19 @@
         formControlName="passwordAgain"
         placeholder="Password Again"
       />
+      @if(registerForm.get('passwordAgain')!.invalid &&
+      registerForm.get('passwordAgain')?.dirty ||
+      registerForm.get('passwordAgain')?.touched){
+      <div class="warning">
+        @if(registerForm.get('passwordAgain')?.errors?.['required']) {
+        <small class="text-warning">Password requierd!</small>
+        } @if(registerForm.get('passwordAgain')?.errors?.['minlength']) {
+        <small class="text-warning"
+          >Password needs to be longer than 10 characters</small
+        >
+        }
+      </div>
+      }
       <button class="register-submit">Register</button>
     </form>
   </main>
