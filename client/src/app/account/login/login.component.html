@@ -3,7 +3,7 @@
     <h1>Login</h1>
   </header>
   <main class="login-body">
-    <form class="login-form" [formGroup]="loginForm">
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <label for="login-email">Email</label>
       <input
         name="login-email"
@@ -37,7 +37,7 @@
         }
       </div>
       }
-      <button class="login-submit">Login</button>
+      <button class="login-submit" type="submit">Login</button>
     </form>
   </main>
 </section>

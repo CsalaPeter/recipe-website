@@ -1,10 +1,20 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AccountService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  register(newUser: IRegister): Observable<{}> {
+    return this.http.post('/api/register', newUser);
+  }
+
+  login(user: ILogin): Observable<{}> {
+    return this.http.post('/api/login', user);
+  }
 }
 
 export interface ILogin {
@@ -13,8 +23,7 @@ export interface ILogin {
 }
 
 export interface IRegister {
-  userName: string;
-  registerEmail: string;
-  registerPassword: string;
-  passwordAgain: string;
+  name: string;
+  email: string;
+  password: string;
 }

@@ -1,7 +1,11 @@
 <section class="register">
   <header class="register-header"><h1>Register</h1></header>
   <main class="register-body">
-    <form class="register-form" [formGroup]="registerForm">
+    <form
+      class="register-form"
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+    >
       <label for="register-name">User Name</label>
       <input
         name="register-name"
@@ -81,7 +85,7 @@
         }
       </div>
       }
-      <button class="register-submit">Register</button>
+      <button class="register-submit" type="submit">Register</button>
     </form>
   </main>
 </section>

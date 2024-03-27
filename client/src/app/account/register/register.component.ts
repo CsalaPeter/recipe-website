@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { AccountService, IRegister } from '../account.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,10 @@ import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
   styleUrl: './register.component.css',
 })
 export class RegisterComponent {
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private accountServive: AccountService
+  ) {}
 
   registerForm = this.formBuilder.group({
     userName: [
@@ -20,4 +24,15 @@ export class RegisterComponent {
     registerPassword: ['', [Validators.required, Validators.minLength(10)]],
     passwordAgain: ['', [Validators.required, Validators.minLength(10)]],
   });
+
+  onSubmit() {
+    const newUser: IRegister = {
+      name: this.registerForm.get(['userName'])!.value,
+      email: this.registerForm.get(['registerEmail'])!.value,
+      password: this.registerForm.get(['registerPassword'])!.value,
+    };
+
+    this.accountServive.register(newUser).subscribe();
+    console.log(newUser);
+  }
 }

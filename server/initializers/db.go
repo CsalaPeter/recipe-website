@@ -1,6 +1,8 @@
-package models
+package initializers
 
 import (
+	"os"
+
 	"gorm.io/driver/postgres"
 
 	"gorm.io/gorm"
@@ -9,7 +11,7 @@ import (
 var DB * gorm.DB
 
 func ConnectDatabase(){
-	connectionData := "host=localhost port=5432 user=root password=password dbname=recipesDB sslmode=disable"
+	connectionData := os.Getenv("DB")
 	database, err := gorm.Open(postgres.Open(connectionData), &gorm.Config{})
 
 	if err != nil {

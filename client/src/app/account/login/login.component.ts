@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-import { ILogin } from '../account.service';
+import { AccountService, ILogin } from '../account.service';
 
 @Component({
   selector: 'app-login',
@@ -10,10 +10,23 @@ import { ILogin } from '../account.service';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private accountService: AccountService
+  ) {}
 
   loginForm = this.formBuilder.group({
     loginEmail: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]],
   });
+
+  onSubmit() {
+    const user: ILogin = {
+      email: this.loginForm.get(['loginEmail'])!.value,
+      password: this.loginForm.get(['password'])!.value,
+    };
+
+    this.accountService.login(user).subscribe();
+    console.log(user);
+  }
 }
