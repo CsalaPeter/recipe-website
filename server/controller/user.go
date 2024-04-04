@@ -8,16 +8,17 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/golang-jwt/jwt"
+	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
 )
 
+var body struct {
+	Name string
+	Email string
+	Password string
+}
+
 func Register(c *gin.Context){
-	var body struct {
-		Name string
-		Email string
-		Password string
-	}
 
 	if c.Bind(&body) != nil {
 		c.JSON(400, gin.H{
@@ -52,11 +53,6 @@ func Register(c *gin.Context){
 }
 
 func Login(c *gin.Context){
-	var body struct {
-		Name string
-		Email string
-		Password string
-	}
 
 	if c.Bind(&body) != nil {
 		c.JSON(400, gin.H{
