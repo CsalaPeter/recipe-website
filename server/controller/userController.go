@@ -84,7 +84,7 @@ func Login(c *gin.Context){
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"sub": user.ID,
-		"exp": time.Now().Add(time.Hour * 24 * 30).Unix(),
+		"exp": time.Now().Add(time.Hour * 24).Unix(),
 	})
 
 	tokenString, err := token.SignedString([]byte(os.Getenv("KEY")))
@@ -102,4 +102,45 @@ func Login(c *gin.Context){
 
 	c.JSON(200, gin.H{
 	})
+}
+
+func User(c *gin.Context){
+	cookie, err := c.Cookie("Authorization")
+
+	if err != nil{
+		c.JSON(401, gin.H{
+			"error": "No cookie found!",
+		})
+		return
+	}
+
+	token, err := jwt.ParseWithClaims(cookie, jwt.MapClaims{}, func(t *jwt.Token) (interface{}, error) {
+		return []byte(os.Getenv("KEY")), nil
+	})
+
+	if err != nil{
+		c.JSON(401, gin.H{
+			"error": "Unauthenticated!",
+		})
+		return
+	}
+
+	if claims, ok := token.Claims.(jwt.MapClaims); ok{
+		if float64(time.Now().Unix()) > claims["exp"].(float64) {
+			c.AbortWithStatus(http.StatusUnauthorized)
+		}
+
+		var user models.User
+		initializers.DB.First(&user, claims["sub"])
+	
+		if user.ID == 0 {
+			c.AbortWithStatus(http.StatusUnauthorized)
+			return
+		}
+
+		c.JSON(200, user)
+
+	} else {
+		c.AbortWithStatus(http.StatusUnauthorized)
+	}
 }

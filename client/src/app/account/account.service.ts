@@ -15,6 +15,10 @@ export class AccountService {
   login(user: ILogin): Observable<{}> {
     return this.http.post('/api/login', user);
   }
+
+  me(): Observable<IUser[]> {
+    return this.http.get<IUser[]>('/api/me');
+  }
 }
 
 export interface ILogin {
@@ -26,4 +30,9 @@ export interface IRegister {
   name: string;
   email: string;
   password: string;
+}
+
+export interface IUser {
+  id: number;
+  email: string;
 }
